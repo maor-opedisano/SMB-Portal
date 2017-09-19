@@ -1,0 +1,64 @@
+<div class="col-12 animated fadeInRight pl-0 pr-0" *ngIf="dataHasLoaded">
+  <div class="row justify-content-end mb-5 mt-5">
+    <button class="btn btn-transparent hvr-glow" (click)="changeTimeFrame(7)" [ngClass]="{'selectedTimeFrame': timeFrame==7}">Last 7 Days
+    </button>
+    <button class="btn btn-transparent hvr-glow" (click)="changeTimeFrame(30)" [ngClass]="{'selectedTimeFrame': timeFrame==30}">Last 30 Days
+    </button>
+    <button class="btn btn-transparent hvr-glow" (click)="changeTimeFrame(90)" [ngClass]="{'selectedTimeFrame': timeFrame==90}">Last 90 Days
+    </button>
+  </div>
+  <div>
+    <app-dashboard-top-totals [totals]="totals" (onTotalSelected)='showAllGraphs($event)'></app-dashboard-top-totals>
+    <div>
+      <div class="graph-container ml-0 mr-0" layout="row" layout-md="column" layout-sm="column" layout-margin layout-align="space-between start">
+        <div class="ml-0 mt-0 mr-0" style="height: 229px" id="graph-selector">
+          <app-dashboard-graph-selector [totals]="allData" (onGraphChanged)="selectedGraphChanged($event)">
+          </app-dashboard-graph-selector>
+        </div>
+        <div class="mr-0 mt-0 ml-3 white frame" flex style="height: 229px">
+          <app-dashboard-graph [graphData]='graphData' [graphColor]="graphColor"></app-dashboard-graph>
+        </div>
+      </div>
+    </div>
+    <div class="ml-0 mr-0" layout="row" layout-align="space-between start" layout-margin>
+      <app-dashboard-pie-charts [pieData]='pieData' [colorScheme]='colorScheme' flex="50" [title]='pieChartTitle' class="ml-0"
+        [selectedGraphHasNoData]="selectedGraphHasNoData"></app-dashboard-pie-charts>
+      <app-email-section flex [recipients]='recipients' [senders]="senders" [title]='pieChartTitle' [recipientValueColor]="recipientValueColor"
+        class='mr-0'></app-email-section>
+    </div>
+  </div>
+</div>
+<div>
+  <app-dashboard-news-feed [feeds]="feeds"></app-dashboard-news-feed>
+</div>
+<style>
+  .selectedTimeFrame {
+    background-color: white !important;
+    color: #333333;
+  }
+
+</style>
+<!--
+<style>
+  @media screen and (min-width: 1000px) and (max-width: 1150px) {
+    #graph-selector {
+      width: 55%;
+    }
+  }
+  @media screen and (min-width: 1151px) and (max-width: 1250px) {
+    #graph-selector {
+      width: 45%;
+    }
+  }
+  @media screen and (min-width: 1251px) and (max-width: 1375px) {
+    #graph-selector {
+      width: 40%;
+    }
+  }
+  @media screen and (min-width: 1376px) and (max-width: 2000px) {
+    #graph-selector {
+      width: 35%;
+    }
+  }
+</style>
+-->

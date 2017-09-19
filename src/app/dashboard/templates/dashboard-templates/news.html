@@ -1,0 +1,41 @@
+<div class="mt-5 mb-5 white frame ml-0 mr-0" layout="column" layout-margin>
+  <div class="news-header">
+    <h4 class="section-title">
+      NEWS
+    </h4>
+  </div>
+  <div layout="row" layout-align="space-between start" layout-margin>
+    <div *ngIf="!feeds" flex="100" layout="row" class="mt-4">
+      <p class="mr-3">Loading News... </p>
+      <div class="ld ld-hourglass ld-spin-fast" style="font-size:30px;color:#8da"></div>
+    </div>
+    <div *ngFor="let feed of feeds" layout-padding layout="column">
+      <div style="width: 70%">
+        <p class="feed-title">{{feed.title}}</p>
+        <p class="mt-3 subtitle">Posted: {{feed.date}}</p>
+        <p style="font-size: 13px" id="lim">{{feed.description}}</p>
+        <a href="{{feed.url}}" target="_blank" class="link-btn" role="button">Read Full Article</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .feed-title {
+    font-size: 20px !important;
+    color: #666666;
+  }
+
+
+  .subtitle {
+    color: #999999 !important;
+  }
+  .news-header{
+    border-bottom: solid 1px lightsteelblue;
+  }
+  .section-title{
+    color: #666666;
+    font-weight: 600;
+    padding: 1em;
+  }
+</style>

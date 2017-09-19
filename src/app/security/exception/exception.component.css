@@ -1,0 +1,35 @@
+.cta{
+  color: #189cd5;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+.selectedPolicy{
+  background-color: white;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  will-change: box-shadow;
+  display: block;
+  position: relative;
+}
+
+.dpt-list:hover {
+  background-color: white;
+}
+.dpt-list{
+  border-bottom: solid 1px white;
+  height: 53px;
+}
+
+#exception-list{
+  /*width: 27% !important;*/
+}
+
+
+
+.dpt-name{
+  color: #666666 !important;
+  font-weight: 500 !important;
+}
+.dpt-users{
+  color: #999999 !important;
+}

@@ -1,0 +1,45 @@
+.spaced-line{
+  line-height: 1.9em !important;
+}
+.section-number > p{
+  font-size: 1.5em;
+}
+.section-number > h3{
+  font-size: 2.5rem;
+}
+
+.dashboard-top-titles{
+  color: #666666;
+  font-style: normal;
+  text-align: right;
+}
+.dashboard-top-figure{
+  color: #666666;
+  font-weight: 600;
+}
+.graph-selector-line {
+  height: 110px !important;
+}
+
+.total-top {
+  font-size: 16px;
+}
+
+.selector-totals {
+  font-size: 40px !important;
+}
+
+.graph-selector-box {
+  height: 100%;
+  cursor:pointer;
+}
+
+.graph-selector-title {
+  line-height: 1.7;
+  color: #999999 !important;
+  font-weight: 600 !important;
+}
+.selectedTimeFrame {
+  background-color: white !important;
+  color: #333333;
+}

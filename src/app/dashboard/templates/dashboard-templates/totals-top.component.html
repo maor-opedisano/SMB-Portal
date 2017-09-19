@@ -1,0 +1,30 @@
+<div layout="row" layout-align="space-between" class="mb-4">
+  <div flex="50" class="p-5 white frame mr-3" layout="row" layout-align="center center">
+    <p flex="66" class="dashboard-top-titles text-center">Total Emails Processed</p>
+    <p flex="33" class="dashboard-top-figure">{{totals.TotalEmailsProcessed}}</p>
+  </div>
+  <div flex="50" class="p-5 white frame ml-3" layout="row" layout-align="center center">
+    <p flex="66" class="dashboard-top-titles text-center">Total Hyperlinks Processed</p>
+    <p flex="33" class="dashboard-top-figure">{{totals.TotalUrls}}</p>
+  </div>
+</div>
+
+<div class="col-12 white frame pr-0 " (click)="displayTotals('showTotals')" style="cursor:pointer;">
+  <div layout="row" layout-align="end end" flex="100">
+    <div id="triangle-purple"></div>
+  </div>
+  <div layout="row" layout-align="center center" class="pb-5 pt-3">
+    <h4 class="dashboard-top-titles mr-3">Total Attachments Processed</h4>
+    <h1 class=" bold-dark-gray underlined-purple ml-3 dashboard-top-figure">{{totals.TotalAttachmentProcessed.TotalResult}}</h1>
+  </div>
+</div>
+
+<style>
+  #triangle-purple {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #9A1796;
+    border-left: 20px solid transparent;
+  }
+
+</style>

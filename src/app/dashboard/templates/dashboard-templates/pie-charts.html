@@ -1,0 +1,17 @@
+<div class="white frame p-3 ml-0" style="height: 400px">
+  <div layout="column" style="height: 100%">
+    <p class="bold light-gray">{{title}}</p>
+    <p>Top Attachment Type</p>
+    <div id="graph-holder" style="height: 100%; ">
+      <ngx-charts-pie-chart [scheme]="colorScheme" [results]="pieData" [legend]="true" [explodeSlices]="true" [labels]="false"
+        [tooltipText]="tooltipText" [doughnut]="true" [gradient]="false" [arcWidth]="0.1">
+      </ngx-charts-pie-chart>
+
+    </div>
+  </div>
+</div>
+
+<style>
+
+
+</style>

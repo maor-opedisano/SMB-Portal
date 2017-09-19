@@ -1,0 +1,19 @@
+.section-title {
+  border-bottom: solid 1px #F7F8F8;
+}
+
+.textBold {
+  font-weight: 700 !important;
+}
+.textBold-gray{
+  color: #999999 !important;
+  font-weight: 700 !important;
+}
+
+p, small, label {
+  color: #666670 !important
+}
+
+small {
+  font-weight: 500;
+}

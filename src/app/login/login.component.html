@@ -1,0 +1,38 @@
+<div class="outer" fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <h3 *ngIf="wrongId" color="accent">Please enter valid credentials</h3>
+  <div class="frame white" style="width: 40%">
+    <div layout-margin layout="row" layout-align="center center" class="mt-5 mb-2">
+      <md-icon style="height:60px; width: auto" svgIcon="resecLoginLogo"></md-icon>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div [hidden]="submitted" fxFlex="90">
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm" id="form-container" fxLayout="column" fxLayoutGap="20px"
+              fxLayoutWrap>
+          <md-input-container class="full-width" dividerColor="primary" *ngIf="!urlHasServer">
+            <input mdInput placeholder="Server" type="text" id="server" required [(ngModel)]="user.server" name="server"
+                   #server="ngModel">
+            <label [hidden]="server.valid || server.pristine" class="wrong-input">Server is required</label>
+          </md-input-container>
+          <md-input-container class="full-width" dividerColor="primary">
+            <input mdInput type="text" placeholder="Username" id="username" required [(ngModel)]="user.username"
+                   name="username" #username="ngModel">
+            <label [hidden]="username.valid || username.pristine" class="wrong-input">Username is required</label>
+          </md-input-container>
+          <md-input-container class="full-width" dividerColor="primary">
+            <input mdInput type="password" placeholder="Password" id="password" required [(ngModel)]="user.password"
+                   name="password" #password="ngModel">
+            <label [hidden]="password.valid || password.pristine" class="wrong-input">Password is incorrect</label>
+          </md-input-container>
+          <button type="submit"  [disabled]="!loginForm.valid || checkingUser" class="btn btn-action-yellow-big hvr-glow">Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #login-btn{
+    background-color: purple;
+    color: white;
+  }
+</style>

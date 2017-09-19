@@ -1,0 +1,103 @@
+<div layout="row" flex="100" layout-align="space-between start" class="ml-0 mr-0 graph-selector-line">
+  <div (click)="changeTheCurrentLine($event, 'totals.totalCleanReplicaByCdr')" class="white frame graph-selector-box hvr-glow graph-id"
+    layout-align="space-between center">
+    <div layout="row" layout-align="end start" flex="100">
+      <div id="triangle-blue">
+      </div>
+    </div>
+    <div style="height: 67%" layout="row" class="pl-3 pr-3">
+      <p class="graph-selector-title" flex="55">Clean<br> Replica<br> By CDR</p>
+      <div flex="45" layout="column">
+        <p class="total-top">{{totals.TotalModified.TotalResult}}</p>
+        <p class="selector-totals">
+          {{totals.TotalModified.TotalResult | getPercentage : totals.TotalAttachmentProcessed.TotalResult}}
+          <span class="percentage">%</span></p>
+      </div>
+    </div>
+  </div>
+  <div (click)="changeTheCurrentLine($event, 'totals.attachmentOk')" class="white frame graph-selector-box hvr-glow graph-id"
+    layout-align="space-between center">
+    <div layout="row" layout-align="end start" flex="100">
+      <div id="triangle-green">
+      </div>
+    </div>
+    <div style="height: 67%" layout="row" class="pl-3 pr-3">
+      <p class="graph-selector-title" flex="55">Original<br> Attachment<br> OK</p>
+      <div flex="45" layout="column">
+        <p class="total-top">{{totals.TotalPassed.TotalResult}}</p>
+        <p class="selector-totals">
+          {{totals.TotalPassed.TotalResult | getPercentage : totals.TotalAttachmentProcessed.TotalResult}}
+          <span class="percentage">%</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div layout="row" flex="100" layout-align="space-between start" class="ml-0 mr-0 mt-3 graph-selector-line">
+  <div (click)="changeTheCurrentLine($event, 'totals.blockedByPolicy')" class="white frame graph-selector-box mr-3 hvr-glow graph-id"
+    layout-align="space-between center">
+    <div layout="row" layout-align="end start" flex="100">
+      <div id="triangle-yellow"></div>
+    </div>
+    <div style="height: 67%" layout="row" class="pl-3 pr-3">
+      <p class="graph-selector-title" flex="55">Attachment<br> Blocked <br>by Policy</p>
+      <div flex="45" layout="column">
+        <p class="total-top">{{totals.TotalBlockedByPolicy.TotalResult}}</p>
+        <p class="selector-totals">
+          {{totals.TotalBlockedByPolicy.TotalResult | getPercentage : totals.TotalAttachmentProcessed.TotalResult}}
+          <span class="percentage">%</span></p>
+      </div>
+
+    </div>
+  </div>
+  <div (click)="changeTheCurrentLine($event, 'totals.attachmentBlockedByAntivirus')" class="white frame graph-selector-box hvr-glow graph-id"
+    layout-align="space-between center">
+    <div layout="row" layout-align="end start" flex="100">
+      <div id="triangle-orange"></div>
+    </div>
+    <div style="height: 67%" layout="row" class="pl-3 pr-3">
+      <p class="graph-selector-title" flex="55">Attachment<br> Blocked <br>by Antivirus</p>
+      <div flex="45" layout="column">
+        <p class="total-top">{{totals.TotalBlockedByAntivirus.TotalResult}}</p>
+        <p class="selector-totals">
+          {{totals.TotalBlockedByAntivirus.TotalResult | getPercentage : totals.TotalAttachmentProcessed.TotalResult}}
+          <span class="percentage">%</span></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  #triangle-blue {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #A5CDED;
+    border-left: 20px solid transparent;
+  }
+
+  #triangle-green {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #A4DCD2;
+    border-left: 20px solid transparent;
+  }
+
+  #triangle-yellow {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #F7D399;
+    border-left: 20px solid transparent;
+  }
+
+  #triangle-orange {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #F5AF91;
+    border-left: 20px solid transparent;
+  }
+
+  .graph-id {
+    width: 196px !important;
+  }
+
+</style>

@@ -1,0 +1,35 @@
+<div class="white frame " style="height: 400px">
+  <div layout="column" class="p-3">
+    <div layout="row" id="top-section" layout-align="space-between center">
+      <div layout="column" flex="60">
+        <p class="bold light-gray">{{title}}</p>
+        <p>Top End Users</p>
+      </div>
+      <div layout="row">
+        <button class="btn btn-transparent" [ngClass]="{'selectedTimeFrame': displayingRecipients}"
+                (click)="displayRecipients()">Recipients
+        </button>
+        <button class="btn btn-transparent" [ngClass]="{'selectedTimeFrame': displayingSenders}"
+                (click)="displaySenders()">Senders
+        </button>
+      </div>
+    </div>
+    <div id="emails" layout="column" layout-align="start center"
+         style="overflow: auto;  height: 310px" layout-margin>
+      <md-list *ngIf="displayingSenders" style="width: 70%">
+        <md-list-item *ngFor='let sender of senders' (click)="seeAllRelatedMails('sender', sender.Key)"
+                      style="cursor:pointer">
+          <p md-line style="color: #666666; font-size: 13px">{{sender.Key}}</p>
+          <p [style.color]="recipientValueColor">{{sender.Value}}</p>
+        </md-list-item>
+      </md-list>
+      <md-list *ngIf="displayingRecipients" style="width: 70%">
+        <md-list-item *ngFor='let recipient of recipients' (click)="seeAllRelatedMails('recipient', recipient.Key)"
+                      style="cursor:pointer">
+          <p md-line style="color: #666666; font-size: 13px">{{recipient.Key}}</p>
+          <p [style.color]="recipientValueColor">{{recipient.Value}}</p>
+        </md-list-item>
+      </md-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+
+<div layout="column">
+  <md-list *ngIf="!noSettingsExist" class="pt-0">
+    <md-list-item *ngIf="newDepartmentRequired" class="selectedPolicy dpt-name">New Department</md-list-item>
+    <md-list-item *ngFor="let exception of exceptionsList | DictionaryIteratorPipe" class="dpt-list"
+                  (click)="selectDepartment(exception.policyName)"
+                  [ngClass]="{'selectedPolicy': isCurrentPolicy(exception.policyName) && !newDepartmentRequired}">
+      <p class="dpt-name fs-13" md-line>{{exception.policyName}}</p>
+      <p md-line class="fs-13 dpt-users">{{exception.exceptions | ArrayLength}} users</p>
+    </md-list-item>
+  </md-list>
+</div>

@@ -1,0 +1,45 @@
+
+
+<div class="col-12 bg-white-shadow">
+
+  <div class="mt-5 text-center" *ngIf="!isEmailEmpty">
+
+    <div class="title-section pt-4 pb-4">
+      <p class="section-header pl-0">BLOCKED EMAILS & ATTACHMENTS</p>
+    </div>
+    <p class="mail-result">{{totalNumberOfMails}} Emails</p>
+    <td-data-table
+      #dataTable
+      [data]="emails"
+      [columns]="columns"
+      [sortable]="true"
+      [selectable]="false"
+      [sortBy]="query.sortField"
+      [sortOrder]="query.sortOrder"
+      (sortChange)="sort($event)"
+      (rowSelect)="selectMail($event)"
+      (selectAll)="selectAllMails($event)">
+    </td-data-table>
+    <div class="md-padding" *ngIf="!dataTable.hasData" layout="row" layout-align="center center">
+      <h3>No results to display.</h3>
+    </div>
+    <td-paging-bar #pagingBar [pageSizes]="[5, 10, 15, 20]" [total]="totalNumberOfMails" (change)="page($event)">
+      <span td-paging-bar-label hide-xs>Row per page:</span>
+      {{pagingBar.range}} <span hide-xs>of {{pagingBar.total}}</span>
+    </td-paging-bar>
+  </div>
+</div>
+
+
+<style>
+  .mail-result{
+    font-size: 18px;
+    color: #666666;
+    font-family: 'RobotoSlab-Light', 'Roboto Slab Light', 'Roboto Slab' !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    text-align: left !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+</style>

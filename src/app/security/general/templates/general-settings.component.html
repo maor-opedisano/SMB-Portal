@@ -1,0 +1,30 @@
+<div class="white frame">
+  <div class="title-section" layout-padding>
+    <h4 class="sob-title">GENERAL</h4>
+  </div>
+  <div class="content-holder pb-42px" layout="row">
+    <div layout="column" flex="60">
+      <div layout="row" layout-align="space-between start" class="mt-53px">
+        <p class="fs-16" flex="50">Hyperlinks<br>
+          <span class="fs-11">This includes links in the body of an email
+          <br>and in any documents attached.</span>
+        </p>
+        <div flex="50" layout-align="space-between start" layout="row">
+          <div flex="40" class="text-center" layout="column">
+            <p class="fs-16 mb-12px">Medium</p>
+            <p class="fs-11">Fix and disable based on URL reputation</p>
+          </div>
+          <div flex>
+            <md-slider #hyperlink [max]="1" style="width: 100%" [min]="0" [step]="1" [vertical]="vertical" color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" layout="column" class="ml-19px">
+            <p class="fs-16 mb-12px">High</p>
+            <p class="fs-11">Disable hyperlink</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

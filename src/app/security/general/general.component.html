@@ -1,0 +1,13 @@
+<div class="container-2" layout="column">
+  <div layout="row" layout-align="space-between start" class="mb-4">
+    <small class="mb-4">The Company policy is applied to all email addresses under the domain name.</small>
+    <button class="btn btn-link" (click)="resetToDefaultValues(mainPolicySettings)">Restore All Recommended Settings</button>
+  </div>
+  <general-with-cdr class="mb-3" [generalSettings]="mainPolicySettings"></general-with-cdr>
+  <special-attachments class="mb-3" [generalSettings]="mainPolicySettings"></special-attachments>
+  <general-settings class="mb-3" [generalSettings]="mainPolicySettings"></general-settings>
+  <general-without-cdr [generalSettings]="mainPolicySettings"></general-without-cdr>
+  <div layout="row" layout-margin layout-align="center center" class="mt-5">
+    <button class="btn btn-action-yellow-big hvr-glow" layout-padding (click)="saveSettings()">APPLY</button>
+  </div>
+</div>

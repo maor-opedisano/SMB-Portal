@@ -1,0 +1,37 @@
+.margin-top{
+  margin-top: 1em;
+}
+
+.item{
+  font-weight: 600;
+  color: #666670;
+
+}
+.cta{
+  color: #189cd5;
+  font-weight: 600;
+  font-size: 0.8em;
+  margin-top: 1.7em !important;
+}
+.inner-section{
+  margin-bottom: 1em;
+}
+.bold{
+  font-weight: 700;
+}
+md-radio-button{
+  font-size: 0.8em !important;
+}
+
+td, th{
+  padding: 0.5em;
+}
+th > small{
+  font-weight: 300;
+}
+.sob-table-security-td{
+  width: 250px !important;
+}
+table{
+  width: 65% !important;
+}

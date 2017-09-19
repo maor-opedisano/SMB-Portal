@@ -1,0 +1,34 @@
+<div class="white frame">
+  <div class="title-section" layout-padding>
+    <h4 class="sob-title">ATTACHMENTS PROCESSED WITH CDR</h4>
+  </div>
+  <div class="content-holder pb-42px" layout="row">
+    <div layout="column" flex="60">
+      <div id="explanation">
+        <p class="fs-13">CDR (Content Disarm and Reconstruction) means that a secure version of<br> the file is created and the email is received
+          seamlessly to the end user.</p>
+        <p class="fs-13 mt-5">If you would like to make file type-specific changes, head to <span class="inner-link" routerLink="../exceptions">exception</span>
+        </p>
+      </div>
+      <div layout="row" layout-align="space-between start" class="mt-30px">
+        <p class="fs-16" flex="50">Applied to documents, <br>spreadsheets, images <br>and presentations</p>
+        <div flex="50" layout-align="space-between start" layout="row">
+          <div flex="40" class="text-center" layout="column">
+            <p class="fs-16 mb-12px">Medium</p>
+            <p class="fs-11">Active content & <br>macros NOT removed</p>
+          </div>
+          <div flex>
+            <md-slider #CDRSliderComponent [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1" [vertical]="vertical" color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" layout="column" class="ml-19px">
+            <p class="fs-16 mb-12px">High</p>
+            <p class="fs-11">Active content & <br>macros removed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

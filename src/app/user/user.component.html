@@ -1,0 +1,76 @@
+<!-- nesting level: 2 entry inside the app -->
+
+<md-sidenav-container style="height: 100vh">
+  <md-sidenav #sidenav opened="true" id="smb-sidenav" mode="side" style="width: 60px !important; min-width: unset"
+              [opened]="!isFirstTimeUser">
+    <ul style="height: 15%">
+      <li class="text-center mt-3 pt-3 pb-3 mb-3 noHoverEffect" routerLink="/user/dashboard">
+        <md-icon class="center-icon" svgIcon="resecLogo"></md-icon>
+      </li>
+    </ul>
+    <nav>
+      <ul>
+        <li mdTooltip="Dashboard" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
+            routerLink="/user/dashboard" routerLinkActive="active">
+          <md-icon class="center-icon" svgIcon="dashboard"></md-icon>
+        </li>
+        <li mdTooltip="Processed Emails" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
+            routerLink="/user/emails"
+            routerLinkActive="active">
+          <md-icon class="center-icon" svgIcon="mails"></md-icon>
+        </li>
+        <li mdTooltip="Security Settings" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
+            routerLink="/user/security" routerLinkActive="active">
+          <md-icon class="center-icon" svgIcon="security"></md-icon>
+        </li>
+        <li mdTooltip="Account Settings" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
+            routerLink="/user/account" routerLinkActive="active">
+          <md-icon class="center-icon" svgIcon="settings"></md-icon>
+        </li>
+        <li mdTooltip="Help" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
+            routerLink="/user/help" routerLinkActive="active">
+          <md-icon class="center-icon" svgIcon="help"></md-icon>
+        </li>
+      </ul>
+    </nav>
+  </md-sidenav>
+  <div layout-fill style="background-color: #F7F8F8">
+    <md-progress-bar *ngIf="showLoader" mode="indeterminate"></md-progress-bar>
+    <nav class="navbar sticky-top bg-white-shadow mb-0">
+      <div class="container-fluid row">
+        <div class="nav navbar-nav mr-auto  justify-content-center">
+          <!-- nav here -->
+          <div layout="row" *ngIf="testRoute('account')">
+            <a class="sob-page-link ml-3 mr-3" routerLink="account/notifications" routerLinkActive="page-active">Notifications</a>
+            <a class="sob-page-link ml-2 mr-4" routerLink="account/account" routerLinkActive="page-active">Account</a>
+            <a class="sob-page-link ml-2" routerLink="account/billing" routerLinkActive="page-active"
+               *ngIf="isStripeUser">Billing</a><!---->
+          </div>
+          <div layout="row" *ngIf="testRoute('emails')">
+            <a class="sob-page-link ml-3 mr-3" routerLink="emails/search" routerLinkActive="page-active">Search</a>
+            <a class="sob-page-link" routerLink="emails/browse" routerLinkActive="page-active">Browse</a>
+          </div>
+          <div layout="row" *ngIf="testRoute('security')">
+            <a class="sob-page-link ml-3 mr-3" routerLink="security/general" routerLinkActive="page-active">Company
+              Policy</a>
+            <a class="sob-page-link" routerLink="security/exceptions" routerLinkActive="page-active">Exceptions</a>
+          </div>
+        </div>
+        <div class="nav navbar-nav ml-auto  justify-content-center">
+          <button [mdMenuTriggerFor]="userMenu" id="userMenu">{{username}}</button>
+          <md-menu #userMenu="mdMenu">
+            <button md-menu-item (click)="openChangePassword()">Change Password</button>
+            <button md-menu-item (click)="logout()">Logout</button>
+          </md-menu>
+        </div>
+      </div>
+    </nav>
+    <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
+      <div [attr.id]="conditionalId">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</md-sidenav-container>
+
+

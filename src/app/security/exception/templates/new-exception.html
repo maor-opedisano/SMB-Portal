@@ -1,0 +1,281 @@
+<div layout="column">
+  <div id="actionCenter" class="white frame margin-top">
+    <div class="title-section" layout="row" layout-align="space-between center" layout-margin>
+      <div flex="70" layout="row" layout-align="space-between center">
+        <p class="mini-heading" flex="30">Department Name</p>
+        <input class="sob-input" [(ngModel)]="settings.policyName" flex>
+      </div>
+      <p class="inner-link" style="text-align: right !important" (click)="cancelCreation(false)" flex>Cancel new department
+      </p>
+    </div>
+
+    <div layout="row" layout-align="space-between start" layout-margin class="mt-5 mb-5 ml-2 mr-3">
+      <div layout="column" layout-align="start space-between " flex="70">
+        <div layout="row" layout-align="space-between start" class="mb-4">
+          <p class="mini-heading" flex="30">Department Users </p>
+          <div layout="column" flex>
+            <textarea [(ngModel)]="addedUsers" class="custom-textarea" rows="7" placeholder="Copy and past email addresses separated by a comma (,)"></textarea>
+            <div layout="row" layout-align="start" class="mt-3">
+              <p class="inner-link fs-11">Upload .csv</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="white frame mt-4" id="withCdr">
+    <div class="title-section" layout-padding>
+      <h4 class="sob-title">ATTACHMENTS PROCESSED WITH CDR</h4>
+    </div>
+    <div class="content-holder pb-42px" layout="row">
+      <div layout="column" flex>
+        <div id="explanation">
+          <p class="fs-13">CDR (Content Disarm and Reconstruction) means that a secure version of<br> the file is created and the email is
+            received seamlessly to the end user.</p>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Documents</p>
+            <p class="fs-11">.doc, .docx, .pdf, .pages, .gdoc</p>
+          </div>
+          <div layout-align="space-between start" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16 mb-12px">Medium</p>
+              <p class="fs-11">Active content & <br>macros NOT removed</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.documents" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [value]="1" [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16 mb-12px">High</p>
+              <p class="fs-11">Active content & <br>macros removed</p>
+            </div>
+          </div>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Spreadsheets</p>
+            <p class="fs-11">.csv, .xls, .xlsx, .gsheet</p>
+          </div>
+          <div flex="55" layout-align="space-between center" layout="row">
+            <div flex="45" flex-gt-lg="25">
+              <p class="fs-16 text-center">Medium</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.spreadsheets" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [value]="1" [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" class="ml-19px">
+              <p class="fs-16">High</p>
+            </div>
+          </div>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Images</p>
+            <p class="fs-11">.png, .jpeg, .jpg, .gif</p>
+          </div>
+          <div flex="55" layout-align="space-between center" layout="row">
+            <div flex="45" flex-gt-lg="25">
+              <p class="fs-16 text-center">Medium</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.images" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
+                [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" class="ml-19px">
+              <p class="fs-16">High</p>
+            </div>
+          </div>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Presentations</p>
+            <p class="fs-11">.ppt, .pptx, .keynote, .gslides</p>
+          </div>
+          <div flex="55" layout-align="space-between center" layout="row">
+            <div flex="45" flex-gt-lg="25">
+              <p class="fs-16 text-center">Medium</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.presentations" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [value]="1" [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" class="ml-19px">
+              <p class="fs-16">High</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="white frame mt-4" id="specialAttachments">
+    <div class="title-section" layout-padding>
+      <h4 class="sob-title">SPECIAL ATTACHMENTS</h4>
+    </div>
+    <div class="content-holder pb-42px" layout="row">
+      <div layout="column" flex>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Signed Documents</p>
+          </div>
+          <div layout-align="space-between start" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16 mb-12px">Signature intact</p>
+              <p class="fs-11">Document is not processed with CDR</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.SpecialAttachments.signedDocuments" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
+                [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16 mb-12px">Signature is not recreated</p>
+              <p class="fs-11">CDR is processed accordingly to existing policy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="white frame mt-4" id="general">
+    <div class="title-section" layout-padding>
+      <h4 class="sob-title">GENERAL</h4>
+    </div>
+    <div class="content-holder pb-42px" layout="row">
+      <div layout="column" flex>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16 mb-3">Hyperlinks</p>
+            <p class="fs-11">This includes links in the body <br>of an email and in
+              <br> any documents attached</p>
+          </div>
+          <div layout-align="space-between start" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16 mb-12px">Medium</p>
+              <p class="fs-11">Fix and disabled based on URL reputation</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.selectedSafeLinksOperation" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
+                [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16 mb-12px">High</p>
+              <p class="fs-11">Disabled hyperlinks</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="white frame mt-4" id="withCdr">
+    <div class="title-section" layout-padding>
+      <h4 class="sob-title">ATTACHMENTS WITHOUT CDR</h4>
+    </div>
+    <div class="content-holder pb-42px" layout="row">
+      <div layout="column" flex>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Videos/Sound</p>
+            <p class="fs-11">.mp4, .mp3</p>
+          </div>
+          <div layout-align="space-between center" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16">Allow</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsWithoutCdr.videoSound" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
+                [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16">Block</p>
+            </div>
+          </div>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Applications/Scripts</p>
+            <p class="fs-11">.dmg, .exe</p>
+          </div>
+          <div layout-align="space-between center" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16 ">Allow</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsWithoutCdr.applicationsScripts" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16">Block</p>
+            </div>
+          </div>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Unrecognized Files</p>
+          </div>
+          <div layout-align="space-between center" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16 mb-12px">Allow</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.AttachmentsWithoutCdr.unrecognizedFiles" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [value]="1" [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16 mb-12px">Block</p>
+            </div>
+          </div>
+        </div>
+        <div layout="row" class="mt-30px">
+          <div layout="column" flex="30">
+            <p class="fs-16">Password Protected</p>
+            <p class="fs-11">A secure version of an attachment can't be made when it is password protected.</p>
+          </div>
+          <div layout-align="space-between center" flex="55" layout="row">
+            <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
+              <p class="fs-16 ">Allow</p>
+            </div>
+            <div flex>
+              <md-slider [(ngModel)]="settings.SpecialAttachments.passwordProtected" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [value]="1" [vertical]="vertical" color="accent">
+              </md-slider>
+            </div>
+            <div flex="35" layout="column" class="ml-19px">
+              <p class="fs-16 ">Block</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="save-settings-exception" layout="row" layout-align="center center" class="mt-4 mb-5">
+    <button [disabled]="newExceptionHasEmail()" class="btn btn-action-yellow-big hvr-glow" (click)="saveSettings(settings)">APPLY
+    </button>
+  </div>
+
+</div>

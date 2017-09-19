@@ -1,0 +1,9 @@
+#downloadChromeButton{
+  font-size: 1.5em !important;
+  background-color: #188FD1;
+  color: white;
+  padding: 0.4em;
+}
+#downloadChromeButton:hover{
+  background-color: #EA3939;
+}

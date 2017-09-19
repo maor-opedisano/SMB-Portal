@@ -1,0 +1,156 @@
+@import '/node_modules/@covalent/core/common/platform.css';
+
+#sidenav-toggler {
+  margin-left: 1em;
+  background-color: whitesmoke;
+}
+
+md-sidenav {
+  background-color: #0C0E47;
+  width: 240px;
+}
+
+li {
+  display: list-item;
+  text-align: left;
+}
+
+li > a {
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 47px;
+  text-decoration: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  padding: 0 16px;
+  position: relative;
+  color: white;
+}
+
+li:hover {
+  background-color: #342B62;
+}
+
+.noHoverEffect:hover {
+  background-color: transparent !important;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  background-color: #342B62;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+  will-change: box-shadow;
+  display: block;
+  position: relative;
+}
+
+#top-bar {
+  padding: 1em;
+  background-color: white;
+
+}
+
+#top-bar > p {
+  margin: 0px;
+  font-weight: 600;
+  /* Rectangle: */
+  color: #333;
+}
+
+.center-icon {
+  vertical-align: middle !important;
+}
+
+.sob-page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  font-size: 16px !important;
+  color: #757575 !important;
+}
+
+.sob-page-link:hover {
+  color: #14123F !important;
+  border-bottom: solid 0px white !important;
+  text-decoration: none !important;
+}
+
+.page-active {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #14123F !important;
+  text-decoration: none !important;
+}
+
+#dropdownMenu1 {
+  background-color: transparent;
+  color: #666666;
+  font-weight: 600;
+}
+
+#dropdownMenu1:hover {
+  background-color: rgba(228, 228, 228, 1);
+  border-color: solid 1px #666666 !important;
+}
+
+.sob-menu-item {
+  color: #666666 !important;
+}
+
+.sob-menu-item:hover {
+  color: rgb(0, 153, 255) !important;
+}
+#dropdownMenu1:focus {
+  outline: 0 !important;
+}
+#userMenu{
+  background-color: #F7F8F8;
+  color: #666;
+  padding-left: 1em;
+  padding-right: 1em;
+  border: none;
+  border-radius: 4px;
+}
+.loader {
+  color: #fff;
+  font-family: Consolas, Menlo, Monaco, monospace;
+  font-weight: bold;
+  font-size: 30vh;
+  opacity: 0.8;
+}
+.loader span {
+  display: inline-block;
+  -webkit-animation: pulse 0.4s alternate infinite ease-in-out;
+  animation: pulse 0.4s alternate infinite ease-in-out;
+}
+.loader span:nth-child(odd) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+@-webkit-keyframes pulse {
+  to {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+@keyframes pulse {
+  to {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}

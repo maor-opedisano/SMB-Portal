@@ -1,0 +1,103 @@
+<div class="white frame">
+  <div class="title-section" layout-padding>
+    <h4 class="sob-title">ATTACHMENTS WITHOUT CDR</h4>
+  </div>
+  <div class="content-holder pb-42px" layout="row">
+    <div layout="column" flex="60">
+      <div layout="row" layout-align="space-between start" class="mt-30px">
+        <p class="fs-16" flex="50">Videos/Sound<br>
+          <span class="fs-11">.mp4, .mp3</span>
+        </p>
+        <div flex="50" layout-align="space-between center" layout="row">
+          <div flex="40" class="text-center">
+            <p class="fs-16">Allow</p>
+          </div>
+          <div flex>
+            <md-slider #videoSound
+                       [max]="1"
+                       style="width: 100%"
+                       [min]="0"
+                       [step]="1"
+                       [vertical]="vertical"
+                       color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" class="ml-19px">
+            <p class="fs-16">Block</p>
+          </div>
+        </div>
+      </div>
+      <div layout="row" layout-align="space-between start" class="mt-30px">
+        <p class="fs-16" flex="50">Applications/Scripts<br>
+          <span class="fs-11">.exe, .dmg</span>
+        </p>
+        <div flex="50" layout-align="space-between center" layout="row">
+          <div flex="40" class="text-center">
+            <p class="fs-16">Allow</p>
+          </div>
+          <div flex>
+            <md-slider #applicationsScripts
+                       [max]="1"
+                       style="width: 100%"
+                       [min]="0"
+                       [step]="1"
+                       [vertical]="vertical"
+                       color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" class="ml-19px">
+            <p class="fs-16">Block</p>
+          </div>
+        </div>
+      </div>
+      <div layout="row" layout-align="space-between start" class="mt-30px">
+        <p class="fs-16" flex="50">Unrecognized Files</p>
+        <div flex="50" layout-align="space-between center" layout="row">
+          <div flex="40" class="text-center">
+            <p class="fs-16">Allow</p>
+          </div>
+          <div flex>
+            <md-slider #unrecognizedFiles
+                       [max]="1"
+                       style="width: 100%"
+                       [min]="0"
+                       [step]="1"
+                       [vertical]="vertical"
+                       color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" class="ml-19px">
+            <p class="fs-16">Block</p>
+          </div>
+        </div>
+      </div>
+      <div layout="row" layout-align="space-between start" class="mt-30px">
+        <p class="fs-16" flex="50">Password Protected<br>
+          <span class="fs-11">A secure version of an attachment can't be made when
+            it is password protected.</span>
+        </p>
+        <div flex="50" layout-align="space-between center" layout="row">
+          <div flex="40" class="text-center">
+            <p class="fs-16">Allow</p>
+          </div>
+          <div flex>
+            <md-slider #passwordProtected
+                       [max]="1"
+                       style="width: 100%"
+                       [min]="0"
+                       [step]="1"
+                       [vertical]="vertical"
+                       color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" class="ml-19px">
+            <p class="fs-16">Block</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

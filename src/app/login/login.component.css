@@ -1,0 +1,15 @@
+.outer {
+  background-color: #F7F8F8;
+}
+
+#form-container {
+  margin-top: 2em;
+  padding-bottom: 2em;
+}
+
+.form-title {
+  background-color: #673AB7;
+  color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+}

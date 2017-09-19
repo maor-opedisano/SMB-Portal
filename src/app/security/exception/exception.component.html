@@ -1,0 +1,30 @@
+<div layout="column" *ngIf="!dataIsLoading">
+  <div layout="row" flex="100" style="margin-top: 3em;">
+    <button class="btn btn-neutral-yellow-hvr" (click)='newDptQuery(true)'>+ Add Department</button>
+  </div>
+  <div layout="row" layout-margin>
+
+    <existing-exceptions flex="25" id="exception-list" [noSettingsExist]="noSettingsExist"
+                         [exceptionsList]="exceptionsList" [currentSettings]="settings"
+                         [newDepartmentRequired]="newDepartment"
+                         (onSelect)="selectDepartment($event)" class="mt-0 mr-0"></existing-exceptions>
+    <div flex class="mt-0">
+      <div *ngIf="!noSettingsExist && !newDepartment" flex>
+        <exception-settings
+          [settings]="settings"
+          (onSave)='postNewSettings($event)' (onDelete)='deletePolicy($event)'>
+        </exception-settings>
+      </div>
+      <div *ngIf="newDepartment" flex>
+        <new-exception (onCancel)="cancelCreation($event)" (onSave)="postNewSettings($event)"></new-exception>
+      </div>
+      <p *ngIf="!newDepartment && noSettingsExist">No setting currently exist</p>
+    </div>
+  </div>
+
+</div>
+<!--
+<div layout="column" layout-align="center center" *ngIf="dataIsLoading" style="min-height: 80vh">
+  <md-spinner></md-spinner>
+</div>
+-->

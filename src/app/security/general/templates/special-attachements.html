@@ -1,0 +1,38 @@
+<!--Model is not well defined-->
+
+
+<div class="white frame">
+  <div class="title-section" layout-padding>
+    <h4 class="sob-title">SPECIAL ATTACHMENTS</h4>
+  </div>
+  <div class="content-holder pb-42px" layout="row">
+    <div layout="column" flex="60">
+      <div layout="row" layout-align="space-between start" class="mt-30px">
+        <p class="fs-16" flex="50">Signed Documents</p>
+        <div flex="50" layout-align="space-between start" layout="row">
+          <div flex="40" class="text-center" layout="column">
+            <p class="fs-16 mb-12px">Signature intact</p>
+            <p class="fs-11">Documents is not processed with CDR</p>
+          </div>
+          <div flex>
+            <md-slider #specialAttachmentSlider
+                       [max]="1"
+                       style="width: 100%"
+                       [min]="0"
+                       [step]="1"
+                       [vertical]="vertical"
+                       color="accent">
+            </md-slider>
+          </div>
+          <div flex="35" layout="column" class="ml-19px">
+            <p class="fs-16 mb-12px">Signature is not recreated</p>
+            <p class="fs-11">CDR is processed according to existing policy</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
