@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd, Event } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { AccountService } from '../account/account.service';
 import { HTTPStateService } from '../shared/custom-http';
 import { Subscription } from 'rxjs/Subscription';
@@ -22,7 +22,7 @@ export class UserChangePasswordComponent extends PasswordMethods {
   changePassword = true;
   forgotPassword = false;
   passwordsToSend: PasswordModel = new PasswordModel();
-  constructor(public dialogRef: MdDialogRef<UserChangePasswordComponent>,
+  constructor(public dialogRef: MatDialogRef<UserChangePasswordComponent>,
     private accountService: AccountService, private router: Router) {
     super();
   }
@@ -85,7 +85,7 @@ export class UserComponent implements OnDestroy {
 
   // TODO:: change the value from the service
   isStripeUser = false;
-  private dialogRef: MdDialogRef<any>;
+  private dialogRef: MatDialogRef<any>;
 
   showSuccessDialog() {
     const dialogRef = this.dialog.open(SuccessDialog);
@@ -119,9 +119,9 @@ export class UserComponent implements OnDestroy {
   }
 
   constructor(private router: Router,
-    iconReg: MdIconRegistry,
+    iconReg: MatIconRegistry,
     sanitizer: DomSanitizer,
-    public dialog: MdDialog,
+    public dialog: MatDialog,
     public accountService: AccountService,
     private httpState: HTTPStateService,
     private _loadingService: TdLoadingService) {

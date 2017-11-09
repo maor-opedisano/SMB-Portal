@@ -6,30 +6,25 @@
         <p>Top End Users</p>
       </div>
       <div layout="row">
-        <button class="btn btn-transparent" [ngClass]="{'selectedTimeFrame': displayingRecipients}"
-                (click)="displayRecipients()">Recipients
+        <button class="btn btn-transparent" [ngClass]="{'selectedTimeFrame': displayingRecipients}" (click)="displayRecipients()">Recipients
         </button>
-        <button class="btn btn-transparent" [ngClass]="{'selectedTimeFrame': displayingSenders}"
-                (click)="displaySenders()">Senders
+        <button class="btn btn-transparent" [ngClass]="{'selectedTimeFrame': displayingSenders}" (click)="displaySenders()">Senders
         </button>
       </div>
     </div>
-    <div id="emails" layout="column" layout-align="start center"
-         style="overflow: auto;  height: 310px" layout-margin>
-      <md-list *ngIf="displayingSenders" style="width: 70%">
-        <md-list-item *ngFor='let sender of senders' (click)="seeAllRelatedMails('sender', sender.Key)"
-                      style="cursor:pointer">
+    <div id="emails" layout="column" layout-align="start center" style="overflow: auto;  height: 310px" layout-margin>
+      <mat-list *ngIf="displayingSenders" style="width: 70%">
+        <mat-list-item *ngFor='let sender of senders' (click)="seeAllRelatedMails('sender', sender.Key)" style="cursor:pointer">
           <p md-line style="color: #666666; font-size: 13px">{{sender.Key}}</p>
           <p [style.color]="recipientValueColor">{{sender.Value}}</p>
-        </md-list-item>
-      </md-list>
-      <md-list *ngIf="displayingRecipients" style="width: 70%">
-        <md-list-item *ngFor='let recipient of recipients' (click)="seeAllRelatedMails('recipient', recipient.Key)"
-                      style="cursor:pointer">
+        </mat-list-item>
+      </mat-list>
+      <mat-list *ngIf="displayingRecipients" style="width: 70%">
+        <mat-list-item *ngFor='let recipient of recipients' (click)="seeAllRelatedMails('recipient', recipient.Key)" style="cursor:pointer">
           <p md-line style="color: #666666; font-size: 13px">{{recipient.Key}}</p>
           <p [style.color]="recipientValueColor">{{recipient.Value}}</p>
-        </md-list-item>
-      </md-list>
+        </mat-list-item>
+      </mat-list>
     </div>
   </div>
 </div>

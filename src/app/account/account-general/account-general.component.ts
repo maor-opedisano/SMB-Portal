@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
-import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 @Component({
   selector: 'change-password-modal-component',
   templateUrl: './changePassword.html',
@@ -14,7 +14,7 @@ export class ChangePasswordModalComponent {
 
   passwordsToSend: any = {};
 
-  constructor(public dialogRef: MdDialogRef<ChangePasswordModalComponent>, private accountService: AccountService) {
+  constructor(public dialogRef: MatDialogRef<ChangePasswordModalComponent>, private accountService: AccountService) {
   }
 
   switchToForgotPassword = () => {
@@ -58,7 +58,7 @@ class CompanyData {
 
 export class AccountGeneralComponent implements OnInit {
 
-  private dialogRef: MdDialogRef<any>;
+  private dialogRef: MatDialogRef<any>;
   testEmailSent = false;
   isAdmin = false;
   // scroll down to see class SettingsForm
@@ -67,7 +67,7 @@ export class AccountGeneralComponent implements OnInit {
   companyData: CompanyData = new CompanyData;
   currentAccount: any;
 
-  constructor(private accountService: AccountService, public dialog: MdDialog) {
+  constructor(private accountService: AccountService, public dialog: MatDialog) {
   }
 
   ngOnInit() {

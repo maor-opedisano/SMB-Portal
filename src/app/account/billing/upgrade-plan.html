@@ -2,7 +2,7 @@
   <div layout="column" flex="100" layout-align="center center" class="pl-4 pb-4 pr-4">
     <div class="section-border">
       <div layout="row" layout-align="end center">
-        <button class="btn btn-circle" md-dialog-close>x</button>
+        <button class="btn btn-circle" mat-dialog-close>x</button>
       </div>
       <h3 class="text-center bold-dark-gray mt-4 mb-4">ReSec Cloud Email Protection</h3>
     </div>
@@ -11,12 +11,12 @@
       <div layout="row" layout-align="space-between start" class="ml-0 mr-0">
         <div layout="column" layout-align="center center" flex="33" layout-margin>
           <!--<button #standardBtn class="btn btn-upgrade-selected" (click)="selected($event)">Standard</button>-->
-          <button #standardBtn  (click)="selected($event)" id="Standard" [ngClass]="getCSSClasses('Standard')">Standard</button>
+          <button #standardBtn (click)="selected($event)" id="Standard" [ngClass]="getCSSClasses('Standard')">Standard</button>
           <small class="mt-4">$0.99/User/Month</small>
         </div>
         <div layout="column" layout-align="center center" flex="33" layout-margin>
           <!--<button #professionalBtn class="btn btn-upgrade-unselected" (click)="selected($event)">Professional</button>-->
-          <button #professionalBtn  (click)="selected($event)" id="Professional" [ngClass]="getCSSClasses('Professional')">Professional</button>
+          <button #professionalBtn (click)="selected($event)" id="Professional" [ngClass]="getCSSClasses('Professional')">Professional</button>
           <small class="mt-4">$1.99/User/Month</small>
         </div>
         <div layout="column" layout-align="center center" flex="33" layout-margin>
@@ -38,7 +38,7 @@
           <li>48 hour original archiving</li>
         </ul>
       </div>
-      <div flex="33" layout-align="start start"  class="plan-list">
+      <div flex="33" layout-align="start start" class="plan-list">
         <ul>
           <li>Unlimited users</li>
           <li>Full file blocking functionality</li>
@@ -50,7 +50,7 @@
           <li>Customizable end user notifications</li>
         </ul>
       </div>
-      <div flex="33" layout-align="start start"  class="plan-list">
+      <div flex="33" layout-align="start start" class="plan-list">
         <ul>
           <li>Unlimited users</li>
           <li>Full file blocking functionality</li>
@@ -77,10 +77,12 @@
     border-bottom: solid 1px #B3B3B3;
     width: 100%;
   }
-  #plan-container{
+
+  #plan-container {
     width: 100%;
   }
-  .plan-list > ul {
+
+  .plan-list>ul {
     font-size: 13px !important;
     color: #666666 !important;
   }

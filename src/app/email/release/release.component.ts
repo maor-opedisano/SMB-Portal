@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MailService } from '../email.service';
 import { UserService } from '../../shared/users.service';
 import { EmailComponent } from '../email.component';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
 class Query {
@@ -32,7 +32,7 @@ export class ReleaseComponent extends EmailComponent implements OnInit, OnDestro
   private serverAddress: string;
   private ticketId: string;
   private recipientAddress: string;
-  constructor(private mailService: MailService, private userService: UserService, private activatedRoute: ActivatedRoute, sanitizer: DomSanitizer, iconReg: MdIconRegistry) {
+  constructor(private mailService: MailService, private userService: UserService, private activatedRoute: ActivatedRoute, sanitizer: DomSanitizer, iconReg: MatIconRegistry) {
     super();
 
     this.readQueryParams();

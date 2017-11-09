@@ -1,41 +1,37 @@
 <!-- nesting level: 2 entry inside the app -->
 
-<md-sidenav-container style="height: 100vh">
-  <md-sidenav #sidenav opened="true" id="smb-sidenav" mode="side" style="width: 60px !important; min-width: unset"
-              [opened]="!isFirstTimeUser">
+<mat-sidenav-container style="height: 100vh">
+  <mat-sidenav #sidenav opened="true" id="smb-sidenav" mode="side" style="width: 60px !important; min-width: unset" [opened]="!isFirstTimeUser">
     <ul style="height: 15%">
       <li class="text-center mt-3 pt-3 pb-3 mb-3 noHoverEffect" routerLink="/user/dashboard">
-        <md-icon class="center-icon" svgIcon="resecLogo"></md-icon>
+        <mat-icon class="center-icon" svgIcon="resecLogo"></mat-icon>
       </li>
     </ul>
     <nav>
       <ul>
-        <li mdTooltip="Dashboard" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
-            routerLink="/user/dashboard" routerLinkActive="active">
-          <md-icon class="center-icon" svgIcon="dashboard"></md-icon>
+        <li matTooltip="Dashboard" matTooltipPosition="right" class="text-center pt-3 pb-3 mb-3" routerLink="/user/dashboard" routerLinkActive="active">
+          <mat-icon class="center-icon" svgIcon="dashboard"></mat-icon>
         </li>
-        <li mdTooltip="Processed Emails" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
-            routerLink="/user/emails"
-            routerLinkActive="active">
-          <md-icon class="center-icon" svgIcon="mails"></md-icon>
+        <li matTooltip="Processed Emails" matTooltipPosition="right" class="text-center pt-3 pb-3 mb-3" routerLink="/user/emails"
+          routerLinkActive="active">
+          <mat-icon class="center-icon" svgIcon="mails"></mat-icon>
         </li>
-        <li mdTooltip="Security Settings" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
-            routerLink="/user/security" routerLinkActive="active">
-          <md-icon class="center-icon" svgIcon="security"></md-icon>
+        <li matTooltip="Security Settings" matTooltipPosition="right" class="text-center pt-3 pb-3 mb-3" routerLink="/user/security"
+          routerLinkActive="active">
+          <mat-icon class="center-icon" svgIcon="security"></mat-icon>
         </li>
-        <li mdTooltip="Account Settings" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
-            routerLink="/user/account" routerLinkActive="active">
-          <md-icon class="center-icon" svgIcon="settings"></md-icon>
+        <li matTooltip="Account Settings" matTooltipPosition="right" class="text-center pt-3 pb-3 mb-3" routerLink="/user/account"
+          routerLinkActive="active">
+          <mat-icon class="center-icon" svgIcon="settings"></mat-icon>
         </li>
-        <li mdTooltip="Help" mdTooltipPosition="right" class="text-center pt-3 pb-3 mb-3"
-            routerLink="/user/help" routerLinkActive="active">
-          <md-icon class="center-icon" svgIcon="help"></md-icon>
+        <li matTooltip="Help" matTooltipPosition="right" class="text-center pt-3 pb-3 mb-3" routerLink="/user/help" routerLinkActive="active">
+          <mat-icon class="center-icon" svgIcon="help"></mat-icon>
         </li>
       </ul>
     </nav>
-  </md-sidenav>
+  </mat-sidenav>
   <div layout-fill style="background-color: #F7F8F8">
-    <md-progress-bar *ngIf="showLoader" mode="indeterminate"></md-progress-bar>
+    <mat-progress-bar *ngIf="showLoader" mode="indeterminate"></mat-progress-bar>
     <nav class="navbar sticky-top bg-white-shadow mb-0">
       <div class="container-fluid row">
         <div class="nav navbar-nav mr-auto  justify-content-center">
@@ -43,25 +39,25 @@
           <div layout="row" *ngIf="testRoute('account')">
             <a class="sob-page-link ml-3 mr-3" routerLink="account/notifications" routerLinkActive="page-active">Notifications</a>
             <a class="sob-page-link ml-2 mr-4" routerLink="account/account" routerLinkActive="page-active">Account</a>
-            <a class="sob-page-link ml-2" routerLink="account/billing" routerLinkActive="page-active"
-               *ngIf="isStripeUser">Billing</a><!---->
+            <a class="sob-page-link ml-2" routerLink="account/billing" routerLinkActive="page-active" *ngIf="isStripeUser">Billing</a>
+            <!---->
           </div>
           <div layout="row" *ngIf="testRoute('emails')">
             <a class="sob-page-link ml-3 mr-3" routerLink="emails/search" routerLinkActive="page-active">Search</a>
             <a class="sob-page-link" routerLink="emails/browse" routerLinkActive="page-active">Browse</a>
           </div>
           <div layout="row" *ngIf="testRoute('security')">
-            <a class="sob-page-link ml-3 mr-3" routerLink="security/general" routerLinkActive="page-active">Company
-              Policy</a>
+            <a class="sob-page-link ml-3 mr-3" routerLink="security/general" routerLinkActive="page-active">Company Policy
+            </a>
             <a class="sob-page-link" routerLink="security/exceptions" routerLinkActive="page-active">Exceptions</a>
           </div>
         </div>
         <div class="nav navbar-nav ml-auto  justify-content-center">
-          <button [mdMenuTriggerFor]="userMenu" id="userMenu">{{username}}</button>
-          <md-menu #userMenu="mdMenu">
-            <button md-menu-item (click)="openChangePassword()">Change Password</button>
-            <button md-menu-item (click)="logout()">Logout</button>
-          </md-menu>
+          <button [matMenuTriggerFor]="userMenu" id="userMenu">{{username}}</button>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item (click)="openChangePassword()">Change Password</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
         </div>
       </div>
     </nav>
@@ -71,6 +67,4 @@
       </div>
     </div>
   </div>
-</md-sidenav-container>
-
-
+</mat-sidenav-container>

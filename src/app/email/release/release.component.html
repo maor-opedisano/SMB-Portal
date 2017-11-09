@@ -1,14 +1,14 @@
-<md-sidenav-container style="height: 100vh">
+<mat-sidenav-container style="height: 100vh">
 
 
   <div *tdLoading="'overlayStarSyntax'; mode:'indeterminate'; type:'circle'; strategy:'overlay'; color:'accent'">
 
     <div layout-margin layout="row" layout-align="center center" class="mt-5 mb-2">
-      <md-icon style="height:60px; width: auto" svgIcon="resecLoginLogo"></md-icon>
+      <mat-icon style="height:60px; width: auto" svgIcon="resecLoginLogo"></mat-icon>
     </div>
 
     <div id="reports-container">
-      <md-progress-bar *ngIf="showLoader" mode="indeterminate"></md-progress-bar>
+      <mat-progress-bar *ngIf="showLoader" mode="indeterminate"></mat-progress-bar>
       <div *ngIf="!isFirstTime" class="mb-5 mt-5">
         <div class="white frame">
           <div class="col-8 pl-0">
@@ -63,14 +63,14 @@
 
                 <div class="row mb-5">
                   <button class="btn btn-neutral-yellow-hvr" layout="row" layout-align="center center" (click)="performAction(emails.SanitizationId, 'ReleaseEmailToRecipient')">
-                <md-icon class="center-icon mr-3" svgIcon="releaseMail"></md-icon>
-                Release to Recipient
-              </button>
+                    <mat-icon class="center-icon mr-3" svgIcon="releaseMail"></mat-icon>
+                    Release to Recipient
+                  </button>
                   <button class="btn btn-neutral-yellow-hvr" (click)="performAction(emails.SanitizationId, 'ForwardToAdmin')" layout="row"
                     layout-align="center center">
-                <md-icon class="center-icon mr-3" svgIcon="forwardMail"></md-icon>
-                Forward To Admin
-              </button>
+                    <mat-icon class="center-icon mr-3" svgIcon="forwardMail"></mat-icon>
+                    Forward To Admin
+                  </button>
                 </div>
               </div>
               <div *ngIf="noResultFound && !noSearchInitiated" class="mt-5 alert alert-warning">
@@ -93,7 +93,7 @@
     </div>
 
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>
 
 <style>
   .search-label {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../shared/users.service';
 import { Router } from '@angular/router';
-import { MdIconRegistry } from '@angular/material';
+import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AccountService } from '../account/account.service';
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   private currentAccount: any;
   public urlHasServer: boolean;
 
-  constructor(private userService: UserService, private accountService: AccountService, private router: Router, sanitizer: DomSanitizer, iconReg: MdIconRegistry) {
+  constructor(private userService: UserService, private accountService: AccountService, private router: Router, sanitizer: DomSanitizer, iconReg: MatIconRegistry) {
     iconReg.addSvgIcon('resecLoginLogo', sanitizer.bypassSecurityTrustResourceUrl('assets/icons/resecLogoLogin.svg'));
   }
 

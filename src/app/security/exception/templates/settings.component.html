@@ -13,10 +13,10 @@
             <textarea [(ngModel)]="addedUsers" class="custom-textarea" rows="7" placeholder="Copy and past email addresses separated by a comma (,)"></textarea>
             <div layout="row" layout-align="start" class="mt-3">
               <td-file-upload #singleFileUpload (upload)="uploadEvent($event)" (cancel)="cancelEvent()" accept=".csv">
-                <md-icon>file_upload</md-icon>
+                <mat-icon>file_upload</mat-icon>
                 <span>{{ singleFileUpload.files?.name }}</span>
                 <ng-template td-file-input-label>
-                  <md-icon>attach_file</md-icon>
+                  <mat-icon>attach_file</mat-icon>
                   <span>Upload .csv</span>
                 </ng-template>
               </td-file-upload>
@@ -26,7 +26,8 @@
         <div layout="row" layout-align="space-between start" flex="80">
           <div layout-wrap layout="row" flex="80">
             <p *ngFor="let user of settings.exceptions |slice:0:numberOfMaxItems" layout="row" layout-align="space-between center" class="user-chips m-2">
-              {{user}} <span (click)="deleteUser(user)" class="ml-2">x</span>
+              {{user}}
+              <span (click)="deleteUser(user)" class="ml-2">x</span>
             </p>
           </div>
           <div style="margin-top: 0.4em" *ngIf="!notEnoughUsers()">
@@ -53,8 +54,8 @@
     <div class="content-holder pb-42px" layout="row">
       <div layout="column" flex>
         <div id="explanation">
-          <p class="fs-13">CDR (Content Disarm and Reconstruction) means that a secure version of<br> the file is created and the email is
-            received seamlessly to the end user.</p>
+          <p class="fs-13">CDR (Content Disarm and Reconstruction) means that a secure version of
+            <br> the file is created and the email is received seamlessly to the end user.</p>
         </div>
         <div layout="row" class="mt-30px">
           <div layout="column" flex="30">
@@ -64,16 +65,18 @@
           <div layout-align="space-between start" flex="55" layout="row">
             <div flex="45" flex-gt-lg="25" class="text-center" layout="column">
               <p class="fs-16 mb-12px">Medium</p>
-              <p class="fs-11">Active content & <br>macros NOT removed</p>
+              <p class="fs-11">Active content &
+                <br>macros NOT removed</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.documents" [max]="1" style="width: 100%" [min]="0" [step]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsProcessedLevels.documents" [max]="1" style="width: 100%" [min]="0" [step]="1"
                 [value]="1" [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16 mb-12px">High</p>
-              <p class="fs-11">Active content & <br>macros removed</p>
+              <p class="fs-11">Active content &
+                <br>macros removed</p>
             </div>
           </div>
         </div>
@@ -87,9 +90,9 @@
               <p class="fs-16 text-center">Medium</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.spreadsheets" [max]="1" style="width: 100%" [min]="0" [step]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsProcessedLevels.spreadsheets" [max]="1" style="width: 100%" [min]="0" [step]="1"
                 [value]="1" [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" class="ml-19px">
               <p class="fs-16">High</p>
@@ -106,9 +109,9 @@
               <p class="fs-16 text-center">Medium</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.images" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsProcessedLevels.images" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
                 [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" class="ml-19px">
               <p class="fs-16">High</p>
@@ -125,9 +128,9 @@
               <p class="fs-16 text-center">Medium</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsProcessedLevels.presentations" [max]="1" style="width: 100%" [min]="0" [step]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsProcessedLevels.presentations" [max]="1" style="width: 100%" [min]="0" [step]="1"
                 [value]="1" [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" class="ml-19px">
               <p class="fs-16">High</p>
@@ -156,9 +159,9 @@
               <p class="fs-11">Document is not processed with CDR</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.SpecialAttachments.signedDocuments" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
-                [vertical]="vertical" color="accent">
-              </md-slider>
+              <mat-slider [(ngModel)]="settings.SpecialAttachments.signedDocuments" [max]="1" style="width: 100%" [min]="0" [step]="1"
+                [value]="1" [vertical]="vertical" color="accent">
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16 mb-12px">Signature is not recreated</p>
@@ -180,7 +183,8 @@
         <div layout="row" class="mt-30px">
           <div layout="column" flex="30">
             <p class="fs-16 mb-3">Hyperlinks</p>
-            <p class="fs-11">This includes links in the body <br>of an email and in
+            <p class="fs-11">This includes links in the body
+              <br>of an email and in
               <br> any documents attached</p>
           </div>
           <div layout-align="space-between start" flex="55" layout="row">
@@ -189,9 +193,9 @@
               <p class="fs-11">Fix and disabled based on URL reputation</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.handleLinks" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1" [vertical]="vertical"
+              <mat-slider [(ngModel)]="settings.handleLinks" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1" [vertical]="vertical"
                 color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16 mb-12px">High</p>
@@ -221,9 +225,9 @@
               <p class="fs-16">Allow</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsWithoutCdr.videoSound" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsWithoutCdr.videoSound" [max]="1" style="width: 100%" [min]="0" [step]="1" [value]="1"
                 [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16">Block</p>
@@ -240,9 +244,9 @@
               <p class="fs-16 ">Allow</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsWithoutCdr.applicationsScripts" [max]="1" style="width: 100%" [min]="0" [step]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsWithoutCdr.applicationsScripts" [max]="1" style="width: 100%" [min]="0" [step]="1"
                 [value]="1" [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16">Block</p>
@@ -258,9 +262,9 @@
               <p class="fs-16 mb-12px">Allow</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.AttachmentsWithoutCdr.unrecognizedFiles" [max]="1" style="width: 100%" [min]="0" [step]="1"
+              <mat-slider [(ngModel)]="settings.AttachmentsWithoutCdr.unrecognizedFiles" [max]="1" style="width: 100%" [min]="0" [step]="1"
                 [value]="1" [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16 mb-12px">Block</p>
@@ -277,9 +281,9 @@
               <p class="fs-16 ">Allow</p>
             </div>
             <div flex>
-              <md-slider [(ngModel)]="settings.SpecialAttachments.passwordProtected" [max]="1" style="width: 100%" [min]="0" [step]="1"
+              <mat-slider [(ngModel)]="settings.SpecialAttachments.passwordProtected" [max]="1" style="width: 100%" [min]="0" [step]="1"
                 [value]="1" [vertical]="vertical" color="accent">
-              </md-slider>
+              </mat-slider>
             </div>
             <div flex="35" layout="column" class="ml-19px">
               <p class="fs-16 ">Block</p>

@@ -8,7 +8,7 @@
           <button class="btn search-btn" (click)="searchMails()" [disabled]="!query.ticketId" *ngIf="noSearchInitiated">
             <i class="fa fa-chevron-right" aria-hidden="true" style="font-size: 18px"></i>
           </button>
-          <button md-mini-fab (click)="emptyQuery()" *ngIf="!noSearchInitiated" class="ml-3">X</button>
+          <button mat-mini-fab (click)="emptyQuery()" *ngIf="!noSearchInitiated" class="ml-3">X</button>
         </div>
         <!-- search result section -->
         <div class="pb-5" style="padding-left: 40px">
@@ -42,8 +42,8 @@
 
             <table class="table table-responsive mt-5" *ngIf="!mailHasNoAttachments" flex="85">
               <thead>
-              <th class="col-2">Attachment</th>
-              <th>Reason</th>
+                <th class="col-2">Attachment</th>
+                <th>Reason</th>
               </thead>
               <tbody id="search-mail-body">
                 <tr *ngFor="let attachment of emails['Attached Files Outcomes'] | DictionaryIteratorPipe: 'true'">
@@ -54,15 +54,13 @@
             </table>
 
             <div class="row mb-5">
-              <button class="btn btn-neutral-yellow-hvr" layout="row" layout-align="center center"
-                      (click)="performAction(emails.SanitizationId, 'ReleaseEmailToRecipient')">
-                <md-icon class="center-icon mr-3" svgIcon="releaseMail"></md-icon>
+              <button class="btn btn-neutral-yellow-hvr" layout="row" layout-align="center center" (click)="performAction(emails.SanitizationId, 'ReleaseEmailToRecipient')">
+                <mat-icon class="center-icon mr-3" svgIcon="releaseMail"></mat-icon>
                 Release to Recipient
               </button>
-              <button class="btn btn-neutral-yellow-hvr"
-                      (click)="performAction(emails.SanitizationId, 'ForwardToAdmin')"
-                      layout="row" layout-align="center center">
-                <md-icon class="center-icon mr-3" svgIcon="forwardMail"></md-icon>
+              <button class="btn btn-neutral-yellow-hvr" (click)="performAction(emails.SanitizationId, 'ForwardToAdmin')" layout="row"
+                layout-align="center center">
+                <mat-icon class="center-icon mr-3" svgIcon="forwardMail"></mat-icon>
                 Forward To Admin
               </button>
             </div>
@@ -79,8 +77,7 @@
     <div class="mt-5 mb-5 p-5">
       <p class="bold-dark-gray">
         0 email</p>
-      <p>No emails have been processed yet. Once they do, you'll see them listed here. Head to the dashboard, complete
-        your
+      <p>No emails have been processed yet. Once they do, you'll see them listed here. Head to the dashboard, complete your
         checklist and make sure you're up and running with ReSecure Mail.</p>
     </div>
   </div>
@@ -92,4 +89,5 @@
     font-weight: 500;
     color: #666666;
   }
+
 </style>

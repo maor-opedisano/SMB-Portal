@@ -22,6 +22,7 @@ export class BrowseComponent extends EmailComponent implements OnInit {
   isEmailEmpty = true;
   sub: any;
   totalNumberOfMails: number;
+  pageSize = 20;
   selectedMails: number[] = [];
   columns: ITdDataTableColumn[] = [
     { name: 'SanitizationDate', label: 'Date', format: rawDate => this.convertToDate(rawDate) },
@@ -31,7 +32,7 @@ export class BrowseComponent extends EmailComponent implements OnInit {
   ];
   query: any = {
     sortField: 'SanitizationDate',
-    PageSize: 5,
+    PageSize: this.pageSize,
     PageIndex: 1,
     sortOrder: 'Desc',
     Stage: 'All'

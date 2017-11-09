@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 /* You can add global styles to this file, and also import other style files */
 
-.mat-list-item-content{
+.mat-list-item-content {
   height: 53px !important;
 }
 
@@ -13,11 +15,14 @@
 }
 
 @font-face {
-  font-family: 'sobRoboto'; /*a name to be used later*/
+  font-family: 'sobRoboto';
+  /*a name to be used later*/
   src: url('https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto_slab/robotoslab-regular-webfont.ttf')
 }
 
+
 /* this id is added dynamically to the app container based on the current route */
+
 #success-icon-modal {
   height: 50px !important;
   width: 50px !important;
@@ -28,7 +33,9 @@
   margin-right: 14.0625% !important;
 }
 
-textarea:focus, input:focus, input[type]:focus {
+textarea:focus,
+input:focus,
+input[type]:focus {
   outline: 0 none !important;
 }
 
@@ -42,9 +49,7 @@ textarea:focus, input:focus, input[type]:focus {
 
 .custom-textarea {
   border: transparent;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
-  0 0px 0px 0 rgba(0, 0, 0, .14),
-  0 0px 0px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 0px 0px 0 rgba(0, 0, 0, .14), 0 0px 0px 0 rgba(0, 0, 0, .12);
   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
   will-change: box-shadow;
   display: block;
@@ -52,14 +57,14 @@ textarea:focus, input:focus, input[type]:focus {
   color: #999999;
   font-style: normal;
   line-height: 15px;
-
   position: relative;
   border-radius: 2px;
   background-color: white;
-
 }
 
+
 /* font sizes classes */
+
 .fs-11 {
   font-size: 11px !important;
 }
@@ -71,6 +76,7 @@ textarea:focus, input:focus, input[type]:focus {
 .fs-16 {
   font-size: 16px !important;
 }
+
 
 /* general classes for margins */
 
@@ -110,14 +116,15 @@ textarea:focus, input:focus, input[type]:focus {
   cursor: pointer !important;
 }
 
-#coming-soon > p {
+#coming-soon>p {
   color: #404040;
   font-size: 16px;
   font-weight: 300 !important;
   text-align: center;
 }
 
-input, label {
+input,
+label {
   font-family: 'Roboto Slab', serif !important;
 }
 
@@ -140,17 +147,17 @@ input, label {
   height: 40px !important;
 }
 
-thead > .td-data-table-row {
+thead>.td-data-table-row {
   border-bottom: solid 1px #666666 !important;
 }
 
-.td-data-table-column > .md-caption {
+.td-data-table-column>.md-caption {
   font-weight: 00 !important;
   color: #333333 !important;
   font-size: 13px !important;
 }
 
-thead > .td-data-table-row:hover {
+thead>.td-data-table-row:hover {
   background-color: transparent !important;
 }
 
@@ -162,13 +169,18 @@ thead > .td-data-table-row:hover {
   background-color: #EBEBF4 !important;
 }
 
-.td-data-table-cell > span {
+.td-data-table-cell>span {
   font-weight: 600 !important;
   font-size: 12px !important;
   color: #666666 !important;
 }
 
-h1, h2, h3, h4, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
   -webkit-margin-start: 0px;
@@ -182,9 +194,7 @@ h1, h2, h3, h4, h5, p {
 
 .sob-input {
   border: transparent;
-  box-shadow: 0 2px 3px 2px rgba(0, 0, 0, .2),
-  0 0px 0px 0 rgba(0, 0, 0, .14),
-  0 0px 0px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 2px 3px 2px rgba(0, 0, 0, .2), 0 0px 0px 0 rgba(0, 0, 0, .14), 0 0px 0px 0 rgba(0, 0, 0, .12);
   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
   will-change: box-shadow;
   padding-left: 10px !important;
@@ -204,7 +214,6 @@ h1, h2, h3, h4, h5, p {
 }
 
 .frame {
-
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
   will-change: box-shadow;
@@ -216,7 +225,6 @@ h1, h2, h3, h4, h5, p {
 .bg-white-shadow {
   background-color: white;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-
 }
 
 .container-2 {
@@ -228,7 +236,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .full-width {
-  width: 100%;
+  width: 100%!important;
 }
 
 .wrong-input {
@@ -253,12 +261,12 @@ input:-webkit-autofill {
   margin-bottom: 2em;
 }
 
-.inner-inline-menu > button:hover {
+.inner-inline-menu>button:hover {
   border-bottom: solid 2px #140048;
   color: #140048;
 }
 
-.inner-inline-menu > button {
+.inner-inline-menu>button {
   color: #9C9A99;
   font-size: 1.3em !important;
   font-family: "Roboto Slab";
@@ -270,7 +278,6 @@ input:-webkit-autofill {
 }
 
 .title-section {
-
   color: #666670;
   border-bottom: solid 2px #F7F8F8;
 }
@@ -281,12 +288,14 @@ input:-webkit-autofill {
   padding-bottom: 1em;
 }
 
+
 /** custom rounded buttons to be used all throughout the app**/
 
 .btn {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 
 /* Boostrap Buttons Styling */
 
@@ -385,14 +394,15 @@ input:-webkit-autofill {
   transition: all 0.3s ease 0s;
 }
 
-.user-chips{
+.user-chips {
   border: solid 2px #ccc !important;
   color: #666666 !important;
   border-radius: 8px;
   padding: 0.1em 0.6em;
   cursor: pointer !important;
 }
-.user-chips:hover{
+
+.user-chips:hover {
   background-color: #F2F2F2;
 }
 
@@ -538,7 +548,6 @@ input:-webkit-autofill {
   border: 2px solid #4D766E;
   border-radius: 40px;
   background: transparent;
-
   transition: all 0.3s ease 0s;
 }
 
@@ -725,7 +734,9 @@ button:focus {
   transition-property: box-shadow;
 }
 
-.hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+.hvr-glow:hover,
+.hvr-glow:focus,
+.hvr-glow:active {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -757,4 +768,3 @@ button:focus {
   font-size: 0.8em !important;
   font-weight: 600 !important;
 }
-

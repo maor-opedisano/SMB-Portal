@@ -17,9 +17,7 @@ import { DeleteExceptionDialog } from './security/exception/templates/templates.
 import { GeneralComponent } from './security/general/general.component';
 import { AccountComponent } from './account/account.component';
 import { UserComponent, UserChangePasswordComponent } from './user/user.component';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 import {
   GeneralSettingsComponent,
@@ -47,26 +45,28 @@ import { ResponseHandlerService } from './shared/response-handler.service';
 import { UserIsSobAndHasToken } from './shared/route-activators';
 // 3rd libraries
 import {
-  MdSliderModule,
-  MdCheckboxModule,
-  MdSlideToggleModule,
-  MdSidenavModule,
-  MdListModule,
-  MdButtonModule,
-  MdMenuModule,
-  MdProgressBarModule,
-  MdProgressSpinnerModule,
-  MdDialogModule,
-  MdSelectModule,
-  MdIconModule,
-  MdRadioModule,
-  MdInputModule,
-  MdTooltipModule
+  MatSliderModule,
+  MatCheckboxModule,
+  MatSlideToggleModule,
+  MatSidenavModule,
+  MatListModule,
+  MatButtonModule,
+  MatMenuModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatDialogModule,
+  MatIconModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatSelectModule
+
+  // MdSelectModule,
+  // MdRadioModule,
 } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+// import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {
   CovalentLayoutModule,
   CovalentDataTableModule,
@@ -74,7 +74,7 @@ import {
   CovalentLoadingModule,
   CovalentFileModule
 } from '@covalent/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 // import { default as reducer } from './store/app-store';
 
@@ -161,20 +161,21 @@ import { WrongBrowserComponent } from './wrong-browser/wrong-browser.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MdSliderModule,
-    MdCheckboxModule,
-    MdSlideToggleModule,
-    MdSidenavModule,
-    MdListModule,
-    MdIconModule,
-    MdButtonModule,
-    MdProgressBarModule,
-    MdProgressSpinnerModule,
-    MdDialogModule,
-    MdSelectModule,
-    MdTooltipModule,
-    MdRadioModule,
-    MdInputModule,
+    MatSliderModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatTooltipModule,
+    MatInputModule,
+    MatMenuModule,
+    MatSelectModule,
+    // MdRadioModule,
     FlexLayoutModule,
     CovalentPagingModule,
     CovalentLayoutModule,
@@ -182,13 +183,9 @@ import { WrongBrowserComponent } from './wrong-browser/wrong-browser.component';
     CovalentFileModule,
     CovalentLoadingModule,
     BrowserAnimationsModule,
-    MdMenuModule,
-    NgxDatatableModule,
-    NgbModule.forRoot(),
-    NgxChartsModule,
-    // StoreModule.provideStore(reducer),
-    // StoreDevtoolsModule.instrumentOnlyWithExtension({      maxAge: 20    }),
-    // EffectsModule.run(DashboardEffects),
+    // NgxDatatableModule,
+    // NgbModule.forRoot(),
+     NgxChartsModule
   ],
   providers: [
     {

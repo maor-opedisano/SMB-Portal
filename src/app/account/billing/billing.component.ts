@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog, MdDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { Renderer2 } from '@angular/core';
 import { AccountService } from '../account.service';
 
@@ -19,7 +19,7 @@ export class UpdatePlanComponent {
   config: any;
   private stripeSubscriptionToken: any;
 
-  constructor(public dialogRef: MdDialogRef<UpdatePlanComponent>, private rd: Renderer2, private accountService: AccountService) {
+  constructor(public dialogRef: MatDialogRef<UpdatePlanComponent>, private rd: Renderer2, private accountService: AccountService) {
     this.currentRd = rd;
     this.config = this.dialogRef.componentInstance.config.data;
     this.currentPlan = this.config.accountData.CurrentPlan;
@@ -91,11 +91,11 @@ class BillingData {
 })
 export class BillingComponent implements OnInit {
   private accountData: any;
-  private dialogRef: MdDialogRef<any>;
+  private dialogRef: MatDialogRef<any>;
   billingData: BillingData = new BillingData();
   private currentNumberOfUsers: string;
 
-  constructor(public dialog: MdDialog, public accountService: AccountService) {
+  constructor(public dialog: MatDialog, public accountService: AccountService) {
 
   }
 

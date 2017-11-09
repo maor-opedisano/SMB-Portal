@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TdFileService } from '@covalent/core';
 import { Policy } from '../../../model/company-policy';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { SecurityService } from '../../security.service';
 import _ from 'lodash';
 
@@ -68,17 +68,17 @@ export class ExistingExceptionsComponent {
 
 @Component({
   selector: 'app-confirm-exception-deletion',
-  template: ` <h3 md-dialog-title>Delete {{data}} ?</h3>
-  <md-dialog-content>This action is irreversible</md-dialog-content>
-  <md-dialog-actions>
-    <button md-button md-dialog-close (click)="dialogRef.close(false)">Don't Delete</button>
+  template: ` <h3 mat-dialog-title>Delete {{data}} ?</h3>
+  <mat-dialog-content>This action is irreversible</mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close (click)="dialogRef.close(false)">Don't Delete</button>
     <!-- Can optionally provide a result for the closing dialog. -->
-    <button md-button [style.color]="'red'" (click)="dialogRef.close(true)">Delete</button>
-  </md-dialog-actions>
+    <button mat-button [style.color]="'red'" (click)="dialogRef.close(true)">Delete</button>
+  </mat-dialog-actions>
   `,
 })
 export class DeleteExceptionDialog {
-  constructor(public dialogRef: MdDialogRef<DeleteExceptionDialog>, @Inject(MD_DIALOG_DATA) public data: any) {
+  constructor(public dialogRef: MatDialogRef<DeleteExceptionDialog>, @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 }
 
@@ -99,7 +99,7 @@ export class ExceptionSettingsComponent extends BaseComponent {
   addingUsers: boolean;
   numberOfMaxItems = 5;
 
-  constructor(public dialog: MdDialog) {
+  constructor(public dialog: MatDialog) {
     super();
     this.addingUsers = false;
   };

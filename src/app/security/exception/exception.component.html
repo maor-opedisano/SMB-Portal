@@ -4,15 +4,11 @@
   </div>
   <div layout="row" layout-margin>
 
-    <existing-exceptions flex="25" id="exception-list" [noSettingsExist]="noSettingsExist"
-                         [exceptionsList]="exceptionsList" [currentSettings]="settings"
-                         [newDepartmentRequired]="newDepartment"
-                         (onSelect)="selectDepartment($event)" class="mt-0 mr-0"></existing-exceptions>
+    <existing-exceptions flex="25" id="exception-list" [noSettingsExist]="noSettingsExist" [exceptionsList]="exceptionsList"
+      [currentSettings]="settings" [newDepartmentRequired]="newDepartment" (onSelect)="selectDepartment($event)" class="mt-0 mr-0"></existing-exceptions>
     <div flex class="mt-0">
       <div *ngIf="!noSettingsExist && !newDepartment" flex>
-        <exception-settings
-          [settings]="settings"
-          (onSave)='postNewSettings($event)' (onDelete)='deletePolicy($event)'>
+        <exception-settings [settings]="settings" (onSave)='postNewSettings($event)' (onDelete)='deletePolicy($event)'>
         </exception-settings>
       </div>
       <div *ngIf="newDepartment" flex>
@@ -23,8 +19,3 @@
   </div>
 
 </div>
-<!--
-<div layout="column" layout-align="center center" *ngIf="dataIsLoading" style="min-height: 80vh">
-  <md-spinner></md-spinner>
-</div>
--->

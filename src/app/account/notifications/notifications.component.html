@@ -7,22 +7,20 @@
       <div class="row mb-3">
         <div class="col-3 mr-3">
           <p class="textBold">Blocked Emails</p>
-          <small class="notification-small">We'll send an email in lieu of the email that was meant to be sent, when the
-            email is blocked.
+          <small class="notification-small">We'll send an email in lieu of the email that was meant to be sent, when the email is blocked.
           </small>
         </div>
-        <md-slide-toggle [(ngModel)]="adminSettings.AdminBlockedEmailNotification"></md-slide-toggle>
+        <mat-slide-toggle [(ngModel)]="adminSettings.AdminBlockedEmailNotification"></mat-slide-toggle>
       </div>
       <div class="row mb-3">
         <div class="col-3 mr-3">
           <p class="textBold">Blocked Attachments</p>
-          <small class="notification-small">We'll send an email notifying the users that an attachment has been blocked
-            with a reason.
+          <small class="notification-small">We'll send an email notifying the users that an attachment has been blocked with a reason.
           </small>
         </div>
-        <!-- <md-slide-toggle [(ngModel)]="adminSettings.AdminAttachedEmailNotification"></md-slide-toggle>-->
         <div id="coming-soon" layout="column" layout-align="center center" class="coming-soon-notification">
-          <p>Coming<br> Soon</p>
+          <p>Coming
+            <br> Soon</p>
         </div>
       </div>
 
@@ -41,7 +39,8 @@
           <small class="notification-small">Once a week, we'll send you a summary of the activity taking place.</small>
         </div>
         <div id="coming-soon" layout="column" layout-align="center center" class="coming-soon-notification">
-          <p>Coming<br> Soon</p>
+          <p>Coming
+            <br> Soon</p>
         </div>
       </div>
     </div>
@@ -52,17 +51,20 @@
       <p class="pt-3 pb-3 section-header">SECURITY EMAIL STAMP</p>
     </div>
     <div class="pt-3 pb-5 mt-3">
-      <small class="cust-not-small col-3 mb-3 pl-0">To make change to this section,<br> please update your plan here.
+      <small class="cust-not-small col-3 mb-3 pl-0">To make change to this section,
+        <br> please update your plan here.
       </small>
 
       <div class="row mt-3 mb-4">
         <div class="col-3">
           <label for="coming-soon" class="pl-0 col-12 col-form-label textBold">
-            Display Stamp</label><br>
+            Display Stamp</label>
+          <br>
           <small>The stamp will appear at the bottom of each email.</small>
         </div>
         <div id="coming-soon" layout="column" layout-align="center center" class="coming-soon-notification ml-3">
-          <p>Coming<br> Soon</p>
+          <p>Coming
+            <br> Soon</p>
         </div>
       </div>
     </div>
@@ -81,5 +83,5 @@
     font-size: 13px !important;
     color: #666666 !important;
   }
-</style>
 
+</style>

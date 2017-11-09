@@ -1,7 +1,9 @@
-md-sidenav {
-    [md-list-item] {
-        &,&:active,&:focus {
-        outline: none;
-        }
+mat-sidenav {
+  [mat-list-item] {
+    &,
+    &:active,
+    &:focus {
+      outline: none;
     }
+  }
 }

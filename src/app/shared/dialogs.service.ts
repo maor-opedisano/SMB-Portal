@@ -1,6 +1,6 @@
-import {Observable} from 'rxjs/Rx';
-import {MdDialogRef, MdDialog} from '@angular/material';
-import {Injectable, Component} from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { MatDialogRef, MatDialog } from '@angular/material';
+import { Injectable, Component } from '@angular/core';
 
 @Component({
   selector: 'confirm-dialog',
@@ -19,7 +19,7 @@ export class ConfirmDialog {
   public title: string;
   public message: string;
 
-  constructor(public dialogRef: MdDialogRef<ConfirmDialog>) {
+  constructor(public dialogRef: MatDialogRef<ConfirmDialog>) {
   }
 
 
@@ -27,13 +27,13 @@ export class ConfirmDialog {
 @Injectable()
 export class DialogsService {
 
-  constructor(private dialog: MdDialog) {
+  constructor(private dialog: MatDialog) {
   }
 
   public Logout(title: string, message: string): Observable<boolean> {
 
-    let dialogRef: MdDialogRef<ConfirmDialog>;
-    dialogRef = this.dialog.open(ConfirmDialog, {disableClose: true});
+    let dialogRef: MatDialogRef<ConfirmDialog>;
+    dialogRef = this.dialog.open(ConfirmDialog, { disableClose: true });
     dialogRef.componentInstance.title = title;
     dialogRef.componentInstance.message = message;
     return dialogRef.afterClosed();
